@@ -4,15 +4,15 @@ import java.util.*;
 
 public class AlienDictionary {
 	
-	List<Word> dizionario;
+	List<WordEnhanced> dizionario;
 
 	public AlienDictionary() {
-		this.dizionario= new ArrayList<Word>();
+		this.dizionario= new ArrayList<WordEnhanced>();
 	}
 	
 	
 	public void addWord(String alienWord, String translation) {
-		Word w= new Word(alienWord, translation);
+		WordEnhanced w= new WordEnhanced(alienWord, translation);
 		
 		if(dizionario.contains(w)) {
 			dizionario.get(dizionario.indexOf(w)).setTranslation(translation);
@@ -22,7 +22,7 @@ public class AlienDictionary {
 	}
 	
 	public String translateWord(String alienWord) {
-		Word w= new Word(alienWord);
+		WordEnhanced w= new WordEnhanced(alienWord);
 
 		if(dizionario.contains(w)) {
 			return dizionario.get(dizionario.indexOf(w)).getTranslation();
